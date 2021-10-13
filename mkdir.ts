@@ -1,1 +1,1 @@
-await Deno.mkdir("webdb_press")
+await Deno.mkdir("webdb_press");
