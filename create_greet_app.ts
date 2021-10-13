@@ -9,8 +9,9 @@ export function createApp(): Application {
   const router = new Router();
 
   router.get("/greet", (ctx) => {
+    const { greet = "Hello" } = helpers.getQuery(ctx);
     const { name = "anonymous" } = helpers.getQuery(ctx);
-    ctx.response.body = `Hello ${name}!!`;
+    ctx.response.body = `${greet} ${name}!!`;
   });
   app.use(router.routes());
   return app;
