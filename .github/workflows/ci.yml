@@ -1,0 +1,11 @@
+on: push
+jobs:
+  deno:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.14.3"
+      - name: deno test
+        run: deno test --allow-net
